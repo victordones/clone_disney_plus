@@ -1,6 +1,8 @@
 @use 'variaveis';
 @use 'hero';
 
+
+//importação da fonte: baixar, dar nome e escolher a pasta que ela está
 @font-face {
     font-family: Avenir;
     src: url(../../assets/fonts/Avenir-Regular.woff2);
@@ -22,20 +24,20 @@
 
 
 
-
 body {
     background-color: variaveis.$corDeFundo;
     font-family: Avenir, sans-serif;
 }
 
-@mixin text($fontSize:16px) {
+@mixin text($fontSize:16px) { // o mixin é uma pré-configuração que pode ser reutilizada. nesse caso apenas um argumento será variável 
     font-size: $fontSize;
     line-height: $fontSize + 10px;
-    color: variaveis.$corTextoPrincipal
+    color: variaveis.$corTextoPrincipal;
 }
 
 .text--big {
-    @include text(18px)
+    @include text(18px)  
+
 }
 
 .text {
@@ -50,9 +52,8 @@ body {
     @include text($fontSize);
     color: variaveis.$corTextoSecundario;
 }
-
 .title--big {
-    @include title (44px);
+    @include title(44px)
 }
 
 .title {
@@ -60,11 +61,25 @@ body {
 }
 
 .title--small {
-    @include title(28px)
+    @include title (28px)
 }
+
+.link-text {
+    @include text(28px);
+    text-decoration: underline;
+    color: variaveis.$corTextoSecundario;
+}
+
+
+
+
+
+
+
 
 .link-text {
     @include text(18px);
     color: variaveis.$corTextoSecundario;
     text-decoration: underline;
 }
+

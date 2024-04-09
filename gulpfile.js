@@ -4,8 +4,8 @@ const imagemin = require('gulp-imagemin');
 
 function styles() {
     return gulp.src('./src/styles/*.scss')  //recupera os arquivos, coloca os arquivos no gulp
-    .pipe(sass({outputStyle: 'compressed'}))
-    .pipe(gulp.dest('./dist/css'));
+    .pipe(sass({outputStyle: 'compressed'})) // pipe encadeia as ações, "cano" que emenda uma ação na outra. aqui é definida a ação de comprimir os arquivos que foram selecionados na linha superior
+    .pipe(gulp.dest('./dist/css')); // aqui é definido o lugar de saída 
 }
 
 function images() {
